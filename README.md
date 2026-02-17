@@ -1,15 +1,23 @@
 # 🏠 House Price Prediction using Machine Learning & Streamlit
 
 ## 📌 Project Overview
-This project predicts house prices based on various features using a Machine Learning model.
-The model was trained using Python and scikit-learn in Google Colab and deployed as an interactive
-web application using Streamlit.
+This project is an end-to-end Machine Learning application that predicts house prices based on key housing features.
+The model was trained using Python and scikit-learn in Google Colab and deployed as an interactive web application
+using Streamlit.
+
+This project demonstrates the **complete ML lifecycle**: data preprocessing, model training, serialization,
+deployment, debugging, and cloud hosting.
 
 ---
 
 ## 🧠 Problem Statement
-To build a machine learning model that can accurately predict house prices based on
-house characteristics such as area, number of bedrooms, bathrooms, parking, and furnishing status.
+To build a machine learning model that can accurately predict house prices based on housing characteristics such as:
+- Area (sq ft)
+- Number of bedrooms and bathrooms
+- Parking availability
+- Road access
+- Furnishing status
+- Location preference
 
 ---
 
