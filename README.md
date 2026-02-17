@@ -64,3 +64,33 @@ House_Price_Prediction_App/
 ```bash
 git clone <your-github-repo-link>
 cd House_Price_Prediction_App
+```
+
+
+## ⚠️ Difficulties Faced
+
+- **Library Version Mismatch:**  
+  Model trained in Google Colab used a different `scikit-learn` version than deployment, causing runtime issues.  
+  **Solution:** Re-trained and re-serialized the model using a compatible version.
+
+- **Dependency Conflicts:**  
+  Incompatible Streamlit and Altair versions caused application crashes.  
+  **Solution:** Fixed by properly managing dependencies in `requirements.txt`.
+
+- **Python Version Differences:**  
+  Streamlit Cloud runs on Python 3.13, where some deprecated modules are removed.  
+  **Solution:** Updated to Python-3.13-compatible library versions.
+
+- **Silent Deployment Errors:**  
+  Initial deployments showed blank screens with no visible errors.  
+  **Solution:** Debugged using Streamlit Cloud logs and added safer runtime handling.
+
+- **Git Synchronization Issues:**  
+  Push failures occurred due to remote changes during deployment.  
+  **Solution:** Pulled, merged, and synchronized Git history correctly.
+
+---
+
+
+
+
