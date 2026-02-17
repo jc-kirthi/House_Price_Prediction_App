@@ -15,14 +15,18 @@ house characteristics such as area, number of bedrooms, bathrooms, parking, and 
 
 ## 📂 Project Structure
 House_Price_Prediction_App/
-│
-├── app.py # Streamlit web application
-├── model.pkl # Trained ML model
-├── columns.pkl # Feature columns used during training
-├── requirements.txt # Project dependencies
-├── House_Price_Prediction_ML.ipynb # Model training notebook (Google Colab)
-└── README.md
 
+├── app.py # Streamlit web application
+
+├── model.pkl # Trained ML model
+
+├── columns.pkl # Feature columns used during training
+
+├── requirements.txt # Project dependencies
+
+├── House_Price_Prediction_ML.ipynb # Model training notebook (Google Colab)
+
+└── README.md # Project documentation
 
 ---
 
