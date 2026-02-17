@@ -35,7 +35,7 @@ furnishingstatus = st.selectbox(
 def yn(val):
     return 1 if val == "yes" else 0
 
-# base input dictionary
+# create input data
 input_data = {
     'area': area,
     'bedrooms': bedrooms,
@@ -48,19 +48,20 @@ input_data = {
     'hotwaterheating': yn(hotwaterheating),
     'airconditioning': yn(airconditioning),
     'prefarea': yn(prefarea),
+    'furnishingstatus_semi-furnished': 1 if furnishingstatus == "semi-furnished" else 0,
+    'furnishingstatus_unfurnished': 1 if furnishingstatus == "unfurnished" else 0
 }
 
-# furnishing status (MATCH TRAINING COLUMN NAMES)
-input_data['furnishingstatus_semifurnished'] = 1 if furnishingstatus == "semi-furnished" else 0
-input_data['furnishingstatus_unfurnished'] = 1 if furnishingstatus == "unfurnished" else 0
-
-# create dataframe
 input_df = pd.DataFrame([input_data])
 
-# align input with training columns (VERY IMPORTANT)
+# align with training columns
 input_df = input_df.reindex(columns=columns, fill_value=0)
 
-# prediction
+# prediction with safety
 if st.button("Predict Price"):
-    prediction = model.predict(input_df)
-    st.success(f"Estimated House Price: ₹ {int(prediction[0]):,}")
+    try:
+        prediction = model.predict(input_df)
+        st.success(f"Estimated House Price: ₹ {int(prediction[0]):,}")
+    except Exception as e:
+        st.error("Prediction failed. Please check input values.")
+        st.exception(e)
